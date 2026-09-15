@@ -569,38 +569,20 @@
   }
 
   document.querySelectorAll('[data-social]').forEach(btn => {
-    btn.addEventListener('click', () => showToast(btn.dataset.social + ' sign-in would open here (demo).'));
+    btn.addEventListener('click', () => { window.location.href = 'krs.html'; });
   });
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const okE = validateEmail(), okP = validatePassword();
-    if (!okE || !okP) {
-      card.classList.remove('shake'); void card.offsetWidth; card.classList.add('shake');
-      (okE ? password : email).focus();
-      return;
-    }
+    // Simple demo flow: no verification, go straight to KRS
     submitBtn.disabled = true;
     submitBtn.classList.add('loading');
     submitText.textContent = 'Signing you in…';
-
-    if (document.getElementById('remember').checked) localStorage.setItem('acme-email', email.value.trim());
-    else localStorage.removeItem('acme-email');
-
-    // Simulated auth request
-    setTimeout(() => {
-      submitBtn.disabled = false;
-      submitBtn.classList.remove('loading');
-      submitText.textContent = 'Sign in →';
-      successMsg.textContent = 'Welcome back, ' + email.value.trim() + '. Redirecting to your dashboard…';
-      overlay.classList.add('show');
-      showToast('Signed in successfully. Welcome back!');
-    }, 1100);
+    setTimeout(() => { window.location.href = 'krs.html'; }, 600);
   });
 
   document.getElementById('continueBtn').addEventListener('click', () => {
-    overlay.classList.remove('show');
-    showToast('This is a demo — hook up your auth API to go live.');
+    window.location.href = 'krs.html';
   });
   overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('show'); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.remove('show'); });

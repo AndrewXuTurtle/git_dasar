@@ -1,3 +1,1 @@
-#Belajar Git
-
-Hi Peter
+Nama Sistem: Sistem Informasi Akademik Universitas
