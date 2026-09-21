@@ -1,2 +1,2 @@
 Nama Sistem: Sistem Informasi Akademik Universitas
-Fitur Terakhir di Update: forget-password
+Fitur Terakhir di Update: OTP Generator

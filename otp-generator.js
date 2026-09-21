@@ -1,0 +1,5 @@
+//Generate OTP
+
+function generate(){
+    
+}
